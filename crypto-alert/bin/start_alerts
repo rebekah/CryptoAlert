@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require_relative '../config/boot'
+require_relative '../config/environment'
+require 'currency_status'
+
+while true
+  CurrencyStatus.check
+  sleep 30
+end

@@ -1,0 +1,15 @@
+FROM ruby:latest
+RUN apt-get -y update
+RUN apt-get -y install postgresql-client
+RUN apt-get -y install nodejs
+
+COPY crypto-alert/Gemfile /tmp
+COPY crypto-alert/Gemfile.lock /tmp
+WORKDIR /tmp
+
+RUN bundle install
+
+COPY ./crypto-alert /crypto-alert
+WORKDIR /crypto-alert
+
+CMD ["bundle", "exec", "bin/start_alerts"]
