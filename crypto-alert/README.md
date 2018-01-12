@@ -1,3 +1,6 @@
 # README
 
-See the project README.md
+See the repo README.md
+
+
+https://github.com/rebekah/CryptoAlert
